@@ -1,6 +1,5 @@
 %%OUR constants!
 SAMPLING_RATE = 24414;
-addpath('~/openrobots/lib/matlab')
 
 
 %% Connect to audio device
@@ -16,15 +15,15 @@ nfr = 0;
 %while(true) %Endless ><
 %for i = 0:1
 %audio = bass.Audio();
-[block, nfr] = getBlockOfAudio(bass,SAMPLING_RATE * 10,nfr);
+[block, nfr] = getBlockOfAudio(bass,24414,nfr);
 
    % [n, loss, l, r, nfr] = getAudioData(4096, audio.Audio(),nfr);
     
     %%%%%Do some fancy shit here ^^
-    %soundsc(block.left, SAMPLING_RATE)
+    soundsc(block.left, SAMPLING_RATE)
     data = [block.left, block.right]
     maxi = max(data) + 0.01;
-    audiowrite('test-left.wav',data ./ maxi ,SAMPLING_RATE)
+    audiowrite('test-left.wav',data ./  ,SAMPLING_RATE)
 
     %Remove data.
     %pause(0.1)

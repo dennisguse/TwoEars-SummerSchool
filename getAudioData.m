@@ -1,34 +1,31 @@
-function [n, loss, l, r] = getAudioData( N, Audio, nfr )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
- 
-nFOP = Audio.nFramesPerChunk * Audio.nChunksOnPort;
-lfi = Audio.lastFrameIndex;
-ofi = max(0, lfi - nFOP + 1); 
+function [audio, n, nfr, loss] = getAudioData(p, N, nfr)
 
-% Detect a data loss 
+fop = p.Audio.nFramesPerChunk * p.Audio.nChunksOnPort;
+lfi = p.Audio.lastFrameIndex;
+ofi = max(0, lfi - fop + 1);
+
+% Detect a data loss
 loss = 0;
 if (nfr < ofi)
     loss = ofi - nfr;
     nfr = ofi;
 end
 
-% Compute the starting position in the left and right input arrays */
- pos = nFOP - (lfi - nfr + 1);
+% Compute the starting position in the left and right input arrays
+pos = fop - (lfi - nfr);
 
-% Fill the output arrays l and r */
- n = 0;
- 
-%l = Audio.left{pos:length(Audio.left)}
- 
-%r = Audio.right{pos:length(Audio.right)}
-l = [];
-r = [];
-while (n < N && pos < nFOP)
-   l(n) = Audio.left(pos);
-   r(n) = Audio.right(pos);
-   n = n + 1;
-   pos = pos + 1;
-   nfr = nfr + 1;
-end 
+% Fill the output arrays l and r
+n = min(N, fop - pos);
+audio = struct('left', zeros(n,1), 'right', zeros(n,1));
+
+i = 1;
+while (i <= n)
+    audio.left(i) = p.Audio.left{pos};
+    audio.right(i) = p.Audio.right{pos};
+    i = i + 1;
+    pos = pos + 1;
+    nfr = nfr + 1;
 end
+
+end
+
