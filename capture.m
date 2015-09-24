@@ -1,6 +1,7 @@
 %%OUR constants!
 SAMPLING_RATE = 24414;
 addpath('~/openrobots/lib/matlab')
+addpath('~/twoears/TwoEars-SummerSchool')
 
 
 %% Connect to audio device
@@ -22,9 +23,9 @@ nfr = 0;
     
     %%%%%Do some fancy shit here ^^
     %soundsc(block.left, SAMPLING_RATE)
-    data = [block.left, block.right]
-    maxi = max(data) + 0.01;
-    audiowrite('test-left.wav',data ./ maxi ,SAMPLING_RATE)
+    data = [block.left, block.right];
+    maxi = max(max(data)) + 0.01;
+    audiowrite('test-C180.wav',data ./ maxi ,SAMPLING_RATE)
 
     %Remove data.
     %pause(0.1)
@@ -32,3 +33,6 @@ nfr = 0;
 
 %% test
 disp "test"
+
+clientMoving = client.load('sendPosition')
+clientMoving.moveRelativePosition('map', 0.5, 0.0, 0.0)
