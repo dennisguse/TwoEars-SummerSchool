@@ -19,18 +19,16 @@ end
 % Fill the output arrays l and r */
  n = 0;
  
-l = Audio.left{pos:length(Audio.left)}
+%l = Audio.left{pos:length(Audio.left)}
  
-r = Audio.right{pos:length(Audio.right)}
-%  l = []
-%  r = []
-%  while (n < N && pos < nFOP)
-%     l[n] = Audio.left{pos};
-%     r[n] = Audio.right[pos];
-%     n = n + 1;
-%     pos = pos + 1;
-%     nfr = nfr + 1;
-%  end
-%  
- 
+%r = Audio.right{pos:length(Audio.right)}
+l = [];
+r = [];
+while (n < N && pos < nFOP)
+   l(n) = Audio.left(pos);
+   r(n) = Audio.right(pos);
+   n = n + 1;
+   pos = pos + 1;
+   nfr = nfr + 1;
+end 
 end
