@@ -18,10 +18,6 @@ rooms  = {[1.665, -2.114], [3.247, -0.752], [3.9, 1.14]}; %Center of each room: 
 %% Driving algorithm
 for currentRoomIndex=1:length(rooms)
     TheRobotGo(clientMoving, rooms{currentRoomIndex}(1), rooms{currentRoomIndex}(2), 0.0)    
-    
-%    clientMoving.moveRelativePosition('map', 0.0, 0.0, 90)
-%    clientMoving.moveRelativePosition('map', 0.0, 0.0, 90)
-%    clientMoving.moveRelativePosition('map', 0.0, 0.0, 90)
     disp PI
     
     %%

@@ -24,15 +24,20 @@ nfr = 0;
     %%%%%Do some fancy shit here ^^
     %soundsc(block.left, SAMPLING_RATE)
     data = [block.left, block.right];
-    maxi = max(max(data)) + 0.01;
-    audiowrite('test-C180.wav',data ./ maxi ,SAMPLING_RATE)
+    %maxi = max(max(data)) + 0.01;
+    %audiowrite('test-test.wav',data ./ maxi ,SAMPLING_RATE)
 
     %Remove data.
-    %pause(0.1)
+    %pause(0.1)ersion 1.11.8
+[ INFO] [1443165680.690402505]: compiled against OGRE version 1.8.1 (Byatis)
+[ INFO] [1443165686.330570155]: Stereo is NOT SUPPORTED
+[ INFO] [1443165686.330729323]: OpenGl v
 %end
 
 %% test
 disp "test"
 
 clientMoving = client.load('sendPosition')
+
 clientMoving.moveRelativePosition('map', 0.5, 0.0, 0.0)
+

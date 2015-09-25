@@ -25,7 +25,7 @@ nfr = 0;
     %soundsc(block.left, SAMPLING_RATE)
     data = [block.left, block.right];
     maxi = max(max(data)) + 0.01;
-    audiowrite('test-C180.wav',data ./ maxi ,SAMPLING_RATE)
+    audiowrite('test-test.wav',data ./ maxi ,SAMPLING_RATE)
 
     %Remove data.
     %pause(0.1)
@@ -36,3 +36,4 @@ disp "test"
 
 clientMoving = client.load('sendPosition')
 clientMoving.moveRelativePosition('map', 0.5, 0.0, 0.0)
+
