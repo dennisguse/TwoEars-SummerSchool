@@ -1,9 +1,8 @@
 function [inRoom] = TheRobotSourceInRoom(bass) 
-    threshold = 0.4;
-   
+    threshold = 250;
 
     nfr = 0;
-    [block, nfr] = getBlockOfAudio(bass, 24414 * 10, nfr);
+    [block, nfr] = getBlockOfAudio(bass, 24414 * 10, nfr); %Taking 10s of audio
 
     inRoom = false;
     if (rms(block.left) + rms(block.right) < threshold)
