@@ -37,16 +37,19 @@ binauloc.LocalizeSources('-a', 1, 1, 4)
 rooms  = {[1.665, -2.114], [3.247, -0.752], [3.9, 1.14]}; %Center of each room: [x, y]
 
 %% Driving algorithm
-for currentRoomIndex=1:length(rooms)
-    %Go to room
-    TheRobotGo(clientMoving, rooms{currentRoomIndex}(1), rooms{currentRoomIndex}(2), 0.0, false)    
-    
-    if (TheRobotSourceInRoom(bass) 
-    %%Sample signal
-    
-        estimation = TheRobotSampleAzimuth(clientMoving, binauloc);
-    
-        TheRobot
+currentRoomIndex = 1;
+for sourceIndex=1:3
+    while (true)
+        %Go to room
+        TheRobotGo(clientMoving, rooms{currentRoomIndex}(1), rooms{currentRoomIndex}(2), 0.0, false)
+        
+        if (TheRobotSourceInRoom(bass))
+            %%Sample signal
+            TheRobotGoToSource(clientMoving, clientAzumut, bass);
+            pause(5);
+            break;
+        end
+        currentRoomIndex = mod(currentRoomIndex + 1, 3);
     end
 end
 disp 'MUIHAHAHAAHAHAH'

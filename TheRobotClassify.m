@@ -1,14 +1,13 @@
-function [result] = classifySrcFinal( earSignals,fsHz )
+function [result] = TheRobotClassify(earSignal, fsHz)
 %Input mono recorded signal and sampling rate
 %
 load('features.mat');
 
-FeaturesTrumpet=FeaturesTrumpet;
-FeaturesFemale= FeaturesFemale;
-Featuresmale=Featuresmale;
+% FeaturesTrumpet=FeaturesTrumpet;
+% FeaturesFemale= FeaturesFemale;
+% Featuresmale=Featuresmale;
 
-
-dObj = dataObject(earSignals,fsHz);
+dObj = dataObject(earSignal,fsHz);
 requests = {'spectralFeatures'};
 
 % Parameters of Gammatone processor
