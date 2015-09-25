@@ -41,10 +41,12 @@ for currentRoomIndex=1:length(rooms)
     %Go to room
     TheRobotGo(clientMoving, rooms{currentRoomIndex}(1), rooms{currentRoomIndex}(2), 0.0, false)    
     
+    if (TheRobotSourceInRoom(bass) 
     %%Sample signal
     
-    estimation = TheRobotSampleAzimuth(clientMoving, binauloc);
+        estimation = TheRobotSampleAzimuth(clientMoving, binauloc);
     
-    TheRobot
+        TheRobot
+    end
 end
 disp 'MUIHAHAHAAHAHAH'

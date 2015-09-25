@@ -29,9 +29,6 @@ nfr = 0;
 
     %Remove data.
     %pause(0.1)ersion 1.11.8
-[ INFO] [1443165680.690402505]: compiled against OGRE version 1.8.1 (Byatis)
-[ INFO] [1443165686.330570155]: Stereo is NOT SUPPORTED
-[ INFO] [1443165686.330729323]: OpenGl v
 %end
 
 %% test
