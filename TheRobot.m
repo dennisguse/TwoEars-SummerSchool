@@ -50,7 +50,7 @@ for sourceIndex=1:3
             TheRobotDance(clientMoving);
             break;
         end
-        currentRoomIndex = mod(currentRoomIndex + 1, 3);
+        currentRoomIndex = mod(currentRoomIndex + 1, 3) + 1;
     end
 end
 disp 'MUIHAHAHAAHAHAH'
