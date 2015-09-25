@@ -45,8 +45,9 @@ for sourceIndex=1:3
         
         if (TheRobotSourceInRoom(bass))
             %%Sample signal
+            disp 'Going to source'
             TheRobotGoToSource(clientMoving, clientAzumut, bass);
-            pause(5);
+            TheRobotDance(clientMoving);
             break;
         end
         currentRoomIndex = mod(currentRoomIndex + 1, 3);
