@@ -1,7 +1,7 @@
 function [sourceType] = TheRobotGoToSource(clientMoving, clientAzimuth, clientBass)
     for driveTo = 1:4    
         estimation = TheRobotSampleAzimuth(clientMoving, clientAzimuth);
-        TheRobotGo(clientMoving, 0, 0, estimation, true)
+        TheRobotGo(clientMoving, 0, 0, estimation, false)
     
         TheRobotGo(clientMoving, 0.1, 0, 0.0, true)
     end
