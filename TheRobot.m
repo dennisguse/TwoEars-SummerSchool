@@ -13,7 +13,7 @@ bass = client.load('bass')
 bass.Acquire('-a', SAMPLING_RATE, FRAME_SIZE, 20)
 clientMoving = client.load('sendPosition')
 
-rooms  = {[1, 1], [1, 2], [1, 3]}; %Center of each room: [x, y]
+rooms  = {[1.665, -2.114], [3.247, -0.752], [3.9, 1.14]}; %Center of each room: [x, y]
 
 %% Driving algorithm
 for currentRoomIndex=1:length(rooms)
