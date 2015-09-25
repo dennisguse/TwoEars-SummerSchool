@@ -2,6 +2,7 @@ clear;
 close all
 clc
 
+startAuditoryFrontEnd()
 
 %% LOAD SIGNAL
 % 

@@ -25,7 +25,7 @@ function [reached] = TheRobotGo(clientMoving, x, y, angle, relative)
         position = navState.NavigationState.position;
         
         currentDistance = sqrt((position.x - x)^2 + (position.y - y)^2)
-        currentAngle = abs(angle - position.angle);
+        currentAngle = abs(angle - position.orientation);
         
         disp ['currentDistance', currentDistance, iterations]
         
