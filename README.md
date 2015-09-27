@@ -25,8 +25,8 @@ _ATTENTION: Code has never exectuted._
 
 Project members:
 
-Axel Rauschenberger, Universität Hannover
-David E. Fernandez, Universidad Carlos III Madrid
-Dennis Guse, TU Berlin
-Siddhartha Jha, Sonova GmbH
-Van Q. Nguyen, INRIA
+# Axel Rauschenberger, Universität Hannover
+# David E. Fernandez, Universidad Carlos III Madrid
+# Dennis Guse, TU Berlin
+# Siddhartha Jha, Sonova GmbH
+# Van Q. Nguyen, INRIA
