@@ -1,3 +1,0 @@
-
-
-%move to the center

@@ -1,8 +1,0 @@
-function [inRoom] = TheRobotSourceInRoom(bass) 
-    nfr = 0;
-    [block, nfr] = getBlockOfAudio(bass, SAMPLING_RATE * 10, nfr);
-
-    inRoom = false;
-    if (rms(block.left) + rms(block.right) 
-    end
-end
